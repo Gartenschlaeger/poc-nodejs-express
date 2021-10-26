@@ -2,8 +2,7 @@
     "name": "poc-nodejs-express",
     "version": "1.0.0",
     "scripts": {
-        "start:dev": "nodemon src/api.ts",
-        "start:dev2": "ts-node-dev src/api.ts"
+        "start": "ts-node-dev src/api.ts"
     },
     "dependencies": {
         "express": "^4.17.1"
