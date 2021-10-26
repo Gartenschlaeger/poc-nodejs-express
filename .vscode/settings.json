@@ -9,8 +9,9 @@
     },
     "editor.rulers": [160],
     "files.exclude": {
-        "**/.git": true,
+        ".git": true,
         ".vscode/*.log": true,
-        "**/node_modules": false
+        "node_modules": true,
+        "dist": true
     }
 }
