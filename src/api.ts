@@ -1,8 +1,8 @@
 import express from "express";
 
-const app = express();
+const api = express();
 
-app.get("/user/:id", (req, res) => {
+api.get("/user/:id", (req, res) => {
     res.json({
         id: req.params.id,
         firstName: "Max",
@@ -10,6 +10,10 @@ app.get("/user/:id", (req, res) => {
     });
 });
 
-app.listen(8080, () => {
-    console.log(`Server is listening on http://localhost:8080`);
-});
+function start(port: number) {
+    api.listen(port, () => {
+        console.log(`Server is listening on http://localhost:${port}`);
+    });
+}
+
+export { start };
