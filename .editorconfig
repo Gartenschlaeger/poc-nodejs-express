@@ -14,5 +14,8 @@ quote_type                = double
 [*.js]
 quote_type                = single
 
+[*.ts]
+quote_type                = single
+
 [Makefile]
 indent_style              = tab

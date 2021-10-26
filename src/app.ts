@@ -1,6 +1,10 @@
-import { processenv } from "processenv";
-import * as api from "./api";
+import { processenv } from 'processenv';
+import * as api from './api';
 
-const port = <number>processenv("PORT", 3000);
+const port = <number>processenv('PORT', 3000);
 
-api.start(port);
+// console.log(processenv());
+
+(async () => {
+    await api.start(port);
+})();
