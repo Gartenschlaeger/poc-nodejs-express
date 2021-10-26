@@ -10,8 +10,6 @@ const noteTodo = function (options: noteTodoOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {
-        console.log('body', req.body);
-
         const { description } = req.body;
 
         const id = await store.noteTodo(description);

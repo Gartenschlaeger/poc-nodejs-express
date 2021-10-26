@@ -21,8 +21,18 @@ class InMemoryStore implements Store {
         return Promise.resolve(todo.id);
     }
 
+    async markTodoAsDone(id: string): Promise<boolean> {
+        const todo = this.todos.find((t) => t.id === id);
+        if (todo) {
+            todo.isDone = true;
+            return Promise.resolve(true);
+        }
+
+        return Promise.resolve(false);
+    }
+
     async getRemainingTodos(): Promise<any> {
-        return Promise.resolve(this.todos);
+        return Promise.resolve(this.todos.filter((t) => !t.isDone));
     }
 }
 

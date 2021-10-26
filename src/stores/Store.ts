@@ -6,6 +6,8 @@ interface Store {
     noteTodo(description: string): Promise<string>;
 
     getRemainingTodos(): Promise<Todo[]>;
+
+    markTodoAsDone(id: string): Promise<boolean>;
 }
 
 export { Store };

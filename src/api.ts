@@ -1,9 +1,10 @@
 import cors from 'cors';
 import express from 'express';
 
+import { InMemoryStore } from './stores/InMemoryStore';
 import { getTodos } from './routes/getTotods';
 import { noteTodo } from './routes/noteTodo';
-import { InMemoryStore } from './stores/InMemoryStore';
+import { markTodoAsDone } from './routes/markTodoAsDone';
 
 const store = new InMemoryStore();
 
@@ -18,6 +19,7 @@ api.get('/', (req, res) => {
 
 // Commands
 api.post('/note-todo', noteTodo({ store }));
+api.post('/mark-todo-as-done/:id', markTodoAsDone({ store }));
 
 // Queries
 api.get('/todos', getTodos({ store }));
