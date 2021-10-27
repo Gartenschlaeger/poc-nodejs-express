@@ -1,12 +1,12 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 
-class TodoModel extends Model {}
-
 interface TodoModelAttributes {
     id?: string;
     description: string;
     isDone: boolean;
 }
+
+class TodoModel extends Model {}
 
 const initModel = async (sequelize: Sequelize) => {
     TodoModel.init(

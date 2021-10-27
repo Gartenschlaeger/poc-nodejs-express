@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto';
 import { Sequelize } from 'sequelize';
 
 import { Store } from './Store';
@@ -9,7 +8,6 @@ class SQLiteStore implements Store {
 
     async init(): Promise<void> {
         const connection = ':memory:';
-        //const connection = 'data.sqlite';
 
         this.sequelize = new Sequelize(`sqlite:${connection}`, {
             logging: true,
@@ -22,7 +20,7 @@ class SQLiteStore implements Store {
 
         await this.sequelize.authenticate();
 
-        console.log('Connection has been established successfully.');
+        console.log('Database connection has been established successfully.');
 
         return Promise.resolve();
     }
