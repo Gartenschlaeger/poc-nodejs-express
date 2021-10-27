@@ -45,7 +45,7 @@ const colorize = (text: string, colorCode: string) => {
     return text;
 };
 
-const log = (message: string, level: LogLevel) => {
+const logInternal = (message: string, level: LogLevel) => {
     message = colorize(formatDate(new Date()), '30;1') + ' ' + message;
 
     const colorCode = getColorCode(level) || '32';
@@ -55,19 +55,19 @@ const log = (message: string, level: LogLevel) => {
 };
 
 const debug = (...args: unknown[]) => {
-    log(util.format.apply(util, args), LogLevel.debug);
+    logInternal(util.format.apply(util, args), LogLevel.debug);
 };
 
 const info = (...args: unknown[]) => {
-    log(util.format.apply(util, args), LogLevel.info);
+    logInternal(util.format.apply(util, args), LogLevel.info);
 };
 
 const warning = (...args: unknown[]) => {
-    log(util.format.apply(util, args), LogLevel.warning);
+    logInternal(util.format.apply(util, args), LogLevel.warning);
 };
 
 const error = (...args: unknown[]) => {
-    log(util.format.apply(util, args), LogLevel.error);
+    logInternal(util.format.apply(util, args), LogLevel.error);
 };
 
 export { debug, info, warning, error };
