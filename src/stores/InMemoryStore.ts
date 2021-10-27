@@ -8,14 +8,16 @@ class InMemoryStore implements Store {
     private sequelize: Sequelize;
 
     async init(): Promise<void> {
-        this.sequelize = new Sequelize('sqlite::memory:');
-
-        TodoModel.initModel(this.sequelize);
-
-        await this.sequelize.sync({ force: true });
-
         try {
+            this.sequelize = new Sequelize('sqlite::memory:');
+            //this.sequelize = new Sequelize('sqlite:Data Source=test.sqlite; Version=3;');
+
+            TodoModel.initModel(this.sequelize);
+
+            await this.sequelize.sync({ force: true });
+
             await this.sequelize.authenticate();
+
             console.log('Connection has been established successfully.');
 
             return Promise.resolve();
