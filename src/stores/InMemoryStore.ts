@@ -6,7 +6,6 @@ import * as TodoModel from '../models/TodoModel';
 
 class InMemoryStore implements Store {
     private sequelize: Sequelize;
-    private todos: TodoModel.TodoModel[] = [];
 
     async init(): Promise<void> {
         this.sequelize = new Sequelize('sqlite::memory:');
