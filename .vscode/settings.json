@@ -7,11 +7,13 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.rulers": [160],
+    "editor.rulers": [
+        160
+    ],
     "files.exclude": {
         ".git": true,
         ".vscode/*.log": true,
         "node_modules": true,
-        "dist": true
+        "dist": false
     }
 }
