@@ -1,12 +1,12 @@
 import cors from 'cors';
 import express from 'express';
 
-import { InMemoryStore } from './stores/InMemoryStore';
+import { SQLiteStore } from './stores/SQLiteStore';
 import { getTodos } from './routes/getTotods';
 import { noteTodo } from './routes/noteTodo';
 import { markTodoAsDone } from './routes/markTodoAsDone';
 
-const store = new InMemoryStore();
+const store = new SQLiteStore();
 
 const api = express();
 
@@ -25,7 +25,11 @@ api.post('/mark-todo-as-done/:id', markTodoAsDone({ store }));
 api.get('/todos', getTodos({ store }));
 
 const start = async (port: number) => {
-    await store.init();
+    try {
+        await store.init();
+    } catch (err) {
+        Promise.reject(err);
+    }
 
     api.listen(port, () => {
         console.log(`Server is listening on http://localhost:${port}`);

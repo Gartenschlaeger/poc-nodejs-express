@@ -4,26 +4,42 @@ POC Projekt to try NodeJS with Express.
 
 # Development
 
-## Start application
+## Running the application
 
 ```sh
 npm run start
 ```
 
-## Api Calls
+## Api
+
+### Get remaining todos
 
 ```sh
+# curl
 curl http://localhost:3000/todos
+
+# httpie
+http http://localhost:3000/todos
 ```
 
-### note-todo
+### Note todo
 
 ```sh
+# curl
 curl -X POST -H 'content-type:application/json' -d '{"description":"Test 1"}' http://localhost:3000/note-todo
+
+# httpie
+echo '{"description":"Test 1"}' | http POST http://localhost:3000/note-todo
 ```
 
+### Mark as done
+
 ```sh
+# curl
 curl -X POST  http://localhost:3000/mark-todo-as-done/<todo id>
+
+# httpie
+http POST http://localhost:3000/mark-todo-as-done/<todo id>
 ```
 
 # References

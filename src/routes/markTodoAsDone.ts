@@ -10,11 +10,15 @@ const markTodoAsDone = function (options: markTodoAsDoneOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {
-        const { id } = req.params;
+        try {
+            const { id } = req.params;
 
-        const result = await store.markTodoAsDone(id);
+            const result = await store.markTodoAsDone(id);
 
-        return res.json({ succeeded: result });
+            return res.json({ succeeded: result });
+        } catch (err) {
+            return res.json({ succeeded: false });
+        }
     };
 };
 

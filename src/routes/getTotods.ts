@@ -10,9 +10,13 @@ const getTodos = function (options: getTodosOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {
-        const items = await store.getRemainingTodos();
+        try {
+            const items = await store.getRemainingTodos();
 
-        return res.json(items);
+            return res.json({ succeeded: true, data: items });
+        } catch (err) {
+            return res.json({ succeeded: false });
+        }
     };
 };
 

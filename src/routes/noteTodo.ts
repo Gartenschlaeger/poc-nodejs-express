@@ -10,11 +10,16 @@ const noteTodo = function (options: noteTodoOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {
-        const { description } = req.body;
+        try {
+            const { description } = req.body;
 
-        const id = await store.noteTodo(description);
+            const id = await store.noteTodo(description);
 
-        return res.json({ id });
+            return res.json({ succeeded: true, data: { id } });
+        } catch (err) {
+            console.log(err);
+            return res.json({ succeeded: false });
+        }
     };
 };
 
