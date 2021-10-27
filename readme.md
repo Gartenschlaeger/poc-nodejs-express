@@ -43,7 +43,9 @@ http POST http://localhost:3000/mark-todo-as-done/<todo id>
 ```
 
 # Required VSCode extensions
-- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+-   https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+-   https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
 # References
 
