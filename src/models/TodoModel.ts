@@ -15,16 +15,16 @@ const initModel = async (sequelize: Sequelize) => {
                 type: DataTypes.UUID,
                 primaryKey: true,
                 allowNull: false,
-                defaultValue: DataTypes.UUIDV4,
+                defaultValue: DataTypes.UUIDV4
             },
             description: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: false
             },
             isDone: {
                 type: DataTypes.BOOLEAN,
-                allowNull: false,
-            },
+                allowNull: false
+            }
         },
         { sequelize, modelName: 'Todo' }
     );

@@ -10,7 +10,7 @@ class SQLiteStore implements Store {
         const connection = ':memory:';
 
         this.sequelize = new Sequelize(`sqlite:${connection}`, {
-            logging: true,
+            logging: true
         });
 
         TodoModel.initModel(this.sequelize);
@@ -28,7 +28,7 @@ class SQLiteStore implements Store {
     async noteTodo(description: string): Promise<string> {
         const values: TodoModel.TodoModelAttributes = {
             description,
-            isDone: false,
+            isDone: false
         };
 
         const result = await TodoModel.TodoModel.create(values);
@@ -44,7 +44,7 @@ class SQLiteStore implements Store {
 
     async getRemainingTodos(): Promise<any> {
         const result = await TodoModel.TodoModel.findAll({
-            where: { isDone: false },
+            where: { isDone: false }
         });
 
         return Promise.resolve(result);
