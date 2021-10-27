@@ -1,11 +1,11 @@
-import { Todo } from '../entities/Todo';
+import { TodoModel } from '../models/TodoModel';
 
 interface Store {
-    init(): Promise<boolean>;
+    init(): Promise<void>;
 
     noteTodo(description: string): Promise<string>;
 
-    getRemainingTodos(): Promise<Todo[]>;
+    getRemainingTodos(): Promise<TodoModel[]>;
 
     markTodoAsDone(id: string): Promise<boolean>;
 }
