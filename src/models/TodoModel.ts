@@ -1,20 +1,21 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 
-interface Todo {
-    id: string;
+class TodoModel extends Model {}
+
+interface TodoModelAttributes {
+    id?: string;
     description: string;
     isDone: boolean;
 }
-
-class TodoModel extends Model {}
 
 const initModel = async (sequelize: Sequelize) => {
     TodoModel.init(
         {
             id: {
-                type: DataTypes.UUIDV4,
-                allowNull: false,
+                type: DataTypes.UUID,
                 primaryKey: true,
+                allowNull: false,
+                defaultValue: DataTypes.UUIDV4,
             },
             description: {
                 type: DataTypes.STRING,
@@ -29,4 +30,4 @@ const initModel = async (sequelize: Sequelize) => {
     );
 };
 
-export { initModel, Todo, TodoModel };
+export { initModel, TodoModelAttributes, TodoModel };

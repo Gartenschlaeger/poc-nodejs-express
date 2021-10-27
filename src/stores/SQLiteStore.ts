@@ -17,7 +17,8 @@ class SQLiteStore implements Store {
 
         TodoModel.initModel(this.sequelize);
 
-        await this.sequelize.sync({ force: true });
+        //await this.sequelize.sync({ force: true });
+        await this.sequelize.sync({ alter: true });
 
         await this.sequelize.authenticate();
 
@@ -27,14 +28,14 @@ class SQLiteStore implements Store {
     }
 
     async noteTodo(description: string): Promise<string> {
-        const values: TodoModel.Todo = {
-            id: randomUUID(),
+        const values: TodoModel.TodoModelAttributes = {
             description,
             isDone: false,
         };
 
-        await TodoModel.TodoModel.create(values);
-        return Promise.resolve(values.id);
+        const result = await TodoModel.TodoModel.create(values);
+
+        return Promise.resolve(result.getDataValue('id'));
     }
 
     async markTodoAsDone(id: string): Promise<boolean> {
