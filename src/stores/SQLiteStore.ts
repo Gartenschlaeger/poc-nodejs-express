@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 import { Store } from './Store';
+import * as logger from '../shared/Logger';
 import * as TodoModel from '../models/TodoModel';
 
 class SQLiteStore implements Store {
@@ -20,7 +21,7 @@ class SQLiteStore implements Store {
 
         await this.sequelize.authenticate();
 
-        console.log('Database connection has been established successfully.');
+        logger.info('Database connection has been established successfully.');
 
         return Promise.resolve();
     }

@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 
 import { Store } from '../stores/Store';
+import * as logger from '../shared/Logger';
 
 export interface noteTodoOptions {
     store: Store;
@@ -17,7 +18,7 @@ const noteTodo = function (options: noteTodoOptions) {
 
             return res.json({ succeeded: true, data: { id } });
         } catch (err) {
-            console.log(err);
+            logger.error(err);
             return res.json({ succeeded: false });
         }
     };

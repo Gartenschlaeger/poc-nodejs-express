@@ -5,6 +5,7 @@ import { SQLiteStore } from './stores/SQLiteStore';
 import { getTodos } from './routes/getTotods';
 import { noteTodo } from './routes/noteTodo';
 import { markTodoAsDone } from './routes/markTodoAsDone';
+import * as logger from './shared/Logger';
 
 const store = new SQLiteStore();
 
@@ -32,7 +33,7 @@ const start = async (port: number) => {
     }
 
     api.listen(port, () => {
-        console.log(`Server is listening on http://localhost:${port}`);
+        logger.info(`Server is listening on http://localhost:${port}`);
     });
 };
 
