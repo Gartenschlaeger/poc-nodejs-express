@@ -42,6 +42,9 @@ curl -X POST  http://localhost:3000/mark-todo-as-done/<todo id>
 http POST http://localhost:3000/mark-todo-as-done/<todo id>
 ```
 
+# Required VSCode extensions
+- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
 # References
 
 -   https://www.youtube.com/watch?v=5s7eFzI_fNo&t=2019s
