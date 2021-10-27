@@ -10,7 +10,7 @@ class SQLiteStore implements Store {
         const connection = ':memory:';
 
         this.sequelize = new Sequelize(`sqlite:${connection}`, {
-            logging: true
+            logging: false
         });
 
         TodoModel.initModel(this.sequelize);
