@@ -15,5 +15,9 @@
         ".vscode/*.log": true,
         "node_modules": true,
         "dist": false
-    }
+    },
+    "eslint.enable": true,
+    "eslint.debug": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.trace.server": "off"
 }
