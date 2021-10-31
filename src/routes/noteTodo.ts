@@ -1,7 +1,6 @@
-import { Request, Response } from 'express';
-
-import { Store } from '../stores/Store';
 import * as logger from '../shared/Logger';
+import { Request, Response } from 'express';
+import { Store } from '../stores/Store';
 
 export interface noteTodoOptions {
     store: Store;

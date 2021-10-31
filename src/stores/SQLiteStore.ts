@@ -1,8 +1,7 @@
-import { Sequelize } from 'sequelize';
-
-import { Store } from './Store';
-import * as logger from '../shared/Logger';
 import * as TodoModel from '../models/TodoModel';
+import * as logger from '../shared/Logger';
+import { Sequelize } from 'sequelize';
+import { Store } from './Store';
 
 class SQLiteStore implements Store {
     private sequelize: Sequelize;
