@@ -1,20 +1,18 @@
-# Contains a list of requests for testing on localhost
-# Requires the VSCode extension https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+// Contains a list of requests for testing purposes
+// This file requires the VSCode Extension https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-# GetRemainingTodos
-GET http://localhost:3000/todos
+@base_url = http://localhost:3000
 
-###
+### GetRemainingTodos
+GET {{base_url}}/todos
 
-# NoteTodo
-POST http://localhost:3000/note-todo
+### NoteTodo
+POST {{base_url}}/note-todo
 content-type: application/json
 
 {
     "description": "Todo Item"
 }
 
-###
-
-# MarkTodoAsDone
-POST http://localhost:3000/mark-todo-as-done/ba1f45fe-cf17-4496-9e28-7a17d173acab
+### MarkTodoAsDone
+POST {{base_url}}/mark-todo-as-done/ba1f45fe-cf17-4496-9e28-7a17d173acab
