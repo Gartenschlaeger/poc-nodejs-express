@@ -1,12 +1,8 @@
-import { Store } from '../stores/Store';
+import { RouteOptions } from './RouteOptions';
 import { Request, Response } from 'express';
 import * as logger from '../shared/Logger';
 
-export interface noteTodoOptions {
-    store: Store;
-}
-
-const noteTodo = function (options: noteTodoOptions) {
+const noteTodo = function (options: RouteOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {

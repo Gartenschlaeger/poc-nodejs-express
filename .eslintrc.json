@@ -16,6 +16,15 @@
         "sort-imports": [
             "error",
             { "ignoreCase": true, "memberSyntaxSortOrder": ["none", "single", "multiple", "all"] }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            { "selector": "default", "format": ["camelCase"] },
+            { "selector": "variable", "format": ["camelCase", "UPPER_CASE"], "leadingUnderscore": "allow" },
+            { "selector": "typeLike", "format": ["PascalCase"], "leadingUnderscore": "allow" },
+            { "selector": "enumMember", "format": ["camelCase", "UPPER_CASE"] }
         ]
     }
 }

@@ -1,11 +1,7 @@
-import { Store } from '../stores/Store';
+import { RouteOptions } from './RouteOptions';
 import { Request, Response } from 'express';
 
-export interface getTodosOptions {
-    store: Store;
-}
-
-const getTodos = function (options: getTodosOptions) {
+const getTodos = function (options: RouteOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {

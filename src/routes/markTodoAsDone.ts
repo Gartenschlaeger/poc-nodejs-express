@@ -1,11 +1,7 @@
-import { Store } from '../stores/Store';
+import { RouteOptions } from './RouteOptions';
 import { Request, Response } from 'express';
 
-export interface markTodoAsDoneOptions {
-    store: Store;
-}
-
-const markTodoAsDone = function (options: markTodoAsDoneOptions) {
+const markTodoAsDone = function (options: RouteOptions) {
     const store = options.store;
 
     return async (req: Request, res: Response) => {
