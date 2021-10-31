@@ -7,6 +7,7 @@
         "no-console": "error",
         "linebreak-style": ["error", "unix"],
         "eol-last": ["error", "always"],
+        "no-multiple-empty-lines": ["error"],
         "sort-imports": [
             "error",
             {
