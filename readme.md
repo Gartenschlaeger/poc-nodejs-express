@@ -59,6 +59,7 @@ This project requires the following VSCode extensions to work.
 
 -   https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 -   https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+-   https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 # References
 
@@ -66,4 +67,3 @@ Some ressources i used to build this project.
 
 -   https://www.youtube.com/watch?v=5s7eFzI_fNo&t=2019s
 -   https://sequelize.org/
--   https://marketplace.visualstudio.com/items?itemName=humao.rest-client
