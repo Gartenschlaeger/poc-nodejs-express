@@ -1,13 +1,11 @@
-// Contains a list of requests for testing purposes
-// This file requires the VSCode Extension https://marketplace.visualstudio.com/items?itemName=humao.rest-client
-
-@base_url = http://localhost:3000
+@PORT = {{$dotenv PORT}}
+@BASE_URL = http://localhost:{{PORT}}
 
 ### GetRemainingTodos
-GET {{base_url}}/todos
+GET {{BASE_URL}}/todos
 
 ### NoteTodo
-POST {{base_url}}/note-todo
+POST {{BASE_URL}}/note-todo
 content-type: application/json
 
 {
@@ -15,4 +13,4 @@ content-type: application/json
 }
 
 ### MarkTodoAsDone
-POST {{base_url}}/mark-todo-as-done/ba1f45fe-cf17-4496-9e28-7a17d173acab
+POST {{BASE_URL}}/mark-todo-as-done/ba1f45fe-cf17-4496-9e28-7a17d173acab
