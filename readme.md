@@ -66,3 +66,4 @@ Some ressources i used to build this project.
 
 -   https://www.youtube.com/watch?v=5s7eFzI_fNo&t=2019s
 -   https://sequelize.org/
+-   https://marketplace.visualstudio.com/items?itemName=humao.rest-client

@@ -1,0 +1,20 @@
+# Contains a list of requests for testing on localhost
+# Requires the VSCode extension https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+# GetRemainingTodos
+GET http://localhost:3000/todos
+
+###
+
+# NoteTodo
+POST http://localhost:3000/note-todo
+content-type: application/json
+
+{
+    "description": "Todo Item"
+}
+
+###
+
+# MarkTodoAsDone
+POST http://localhost:3000/mark-todo-as-done/ba1f45fe-cf17-4496-9e28-7a17d173acab
