@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
-
 import { Store } from '../stores/Store';
+import { Request, Response } from 'express';
 
 export interface markTodoAsDoneOptions {
     store: Store;

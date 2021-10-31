@@ -55,19 +55,19 @@ const logInternal = (message: string, level: LogLevel) => {
 };
 
 const debug = (...args: unknown[]) => {
-    logInternal(util.format.apply(util, args), LogLevel.debug);
+    logInternal(util.format.apply(util, ...args), LogLevel.debug);
 };
 
 const info = (...args: unknown[]) => {
-    logInternal(util.format.apply(util, args), LogLevel.info);
+    logInternal(util.format.apply(util, ...args), LogLevel.info);
 };
 
 const warning = (...args: unknown[]) => {
-    logInternal(util.format.apply(util, args), LogLevel.warning);
+    logInternal(util.format.apply(util, ...args), LogLevel.warning);
 };
 
 const error = (...args: unknown[]) => {
-    logInternal(util.format.apply(util, args), LogLevel.error);
+    logInternal(util.format.apply(util, ...args), LogLevel.error);
 };
 
 export { debug, info, warning, error };

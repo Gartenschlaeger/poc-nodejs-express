@@ -2,7 +2,12 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint", "prettier"],
-    "extends": [],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
     "rules": {
         "no-console": "error",
         "linebreak-style": ["error", "unix"],
@@ -10,13 +15,7 @@
         "no-multiple-empty-lines": ["error"],
         "sort-imports": [
             "error",
-            {
-                "ignoreCase": false,
-                "ignoreDeclarationSort": false,
-                "ignoreMemberSort": false,
-                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-                "allowSeparatedGroups": false
-            }
+            { "ignoreCase": true, "memberSyntaxSortOrder": ["none", "single", "multiple", "all"] }
         ]
     }
 }

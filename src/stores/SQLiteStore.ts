@@ -1,7 +1,7 @@
-import * as TodoModel from '../models/TodoModel';
-import * as logger from '../shared/Logger';
 import { Sequelize } from 'sequelize';
 import { Store } from './Store';
+import { initTodoModel, TodoModel, TodoModelAttributes } from '../models/TodoModel';
+import * as logger from '../shared/Logger';
 
 class SQLiteStore implements Store {
     private sequelize: Sequelize;
@@ -13,7 +13,7 @@ class SQLiteStore implements Store {
             logging: false
         });
 
-        TodoModel.initModel(this.sequelize);
+        initTodoModel(this.sequelize);
 
         //await this.sequelize.sync({ force: true });
         await this.sequelize.sync({ alter: true });
@@ -26,24 +26,24 @@ class SQLiteStore implements Store {
     }
 
     async noteTodo(description: string): Promise<string> {
-        const values: TodoModel.TodoModelAttributes = {
+        const values: TodoModelAttributes = {
             description,
             isDone: false
         };
 
-        const result = await TodoModel.TodoModel.create(values);
+        const result = await TodoModel.create(values);
 
         return Promise.resolve(result.getDataValue('id'));
     }
 
     async markTodoAsDone(id: string): Promise<boolean> {
-        const result = await TodoModel.TodoModel.update({ isDone: true }, { where: { id, isDone: false } });
+        const result = await TodoModel.update({ isDone: true }, { where: { id, isDone: false } });
 
         return Promise.resolve(result[0] > 0);
     }
 
-    async getRemainingTodos(): Promise<any> {
-        const result = await TodoModel.TodoModel.findAll({
+    async getRemainingTodos(): Promise<TodoModel[]> {
+        const result = await TodoModel.findAll({
             where: { isDone: false }
         });
 

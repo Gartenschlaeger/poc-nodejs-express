@@ -8,7 +8,7 @@ interface TodoModelAttributes {
 
 class TodoModel extends Model {}
 
-const initModel = async (sequelize: Sequelize) => {
+const initTodoModel = async (sequelize: Sequelize) => {
     TodoModel.init(
         {
             id: {
@@ -30,4 +30,4 @@ const initModel = async (sequelize: Sequelize) => {
     );
 };
 
-export { initModel, TodoModelAttributes, TodoModel };
+export { initTodoModel, TodoModelAttributes, TodoModel };

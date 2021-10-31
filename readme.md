@@ -66,4 +66,5 @@ This project requires the following VSCode extensions to work.
 Some ressources i used to build this project.
 
 -   https://www.youtube.com/watch?v=5s7eFzI_fNo&t=2019s
+-   https://khalilstemmler.com/blogs/tooling/prettier/
 -   https://sequelize.org/

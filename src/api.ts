@@ -1,10 +1,10 @@
-import * as logger from './shared/Logger';
-import { SQLiteStore } from './stores/SQLiteStore';
 import cors from 'cors';
 import express from 'express';
 import { getTodos } from './routes/getTotods';
 import { markTodoAsDone } from './routes/markTodoAsDone';
 import { noteTodo } from './routes/noteTodo';
+import { SQLiteStore } from './stores/SQLiteStore';
+import * as logger from './shared/Logger';
 
 const store = new SQLiteStore();
 
